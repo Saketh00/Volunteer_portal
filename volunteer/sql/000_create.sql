@@ -1,8 +1,8 @@
-drop table if exists users;
-drop table if exists student;
-drop table if exists administrator;
-drop table if exists activities;
-drop table if exists applications;
+drop table if exists users cascade;
+drop table if exists student cascade;
+drop table if exists administrator cascade;
+drop table if exists activities cascade;
+drop table if exists applications cascade;
 
 create table users(
     id serial primary key,
