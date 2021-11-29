@@ -8,12 +8,14 @@ def create_app():
         DATABASE="volunteer"
     )
 
+    from . import main
+    app.register_blueprint(main.bp)
+
+    from . import db
+    db.init_app(app)
+
     @app.route("/")
     def index():
-        dbconn=psycopg2.connect("dbname=volunteer")
-        cursor=dbconn.cursor()
-        cursor.execute("select * from users")
-        details=cursor.fetchall()
-        return render_template("index.html", details=details)
+        return render_template("index.html")
 
     return app  
