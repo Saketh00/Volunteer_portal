@@ -6,7 +6,7 @@ def user_list():
     cursor=dbconn.cursor()
     cursor.execute("select * from users")
     udetails=cursor.fetchall()
-    print(udetails)
+    print(udetails[0])
 
 
 def Insert():
